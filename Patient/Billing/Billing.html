@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction</title>
+    <link rel=stylesheet href="billing.css">
+    <style>
+      
+    html{
+      background-color: black;
+      color: antiquewhite;
+    }
+      input{
+        padding: 20px;
+        margin-bottom: 6%;
+      }
+      select{
+        height:40px;
+        margin:1%;
+        font-size: 20px;
+      }
+      td{
+        font-size:20px;
+      }
+      input:focus{
+        background-color: rgb(245, 166, 234);
+        color:rgb(83, 17, 79);
+        font-size:15px;
+      }
+      input[type="submit"]:hover{
+        background-color: rgb(112, 251, 195);
+      }
+    </style>
+</head>
+<body>
+  <h1 style="font-weight: bold; font-family: 'Times New Roman', Times, serif; color:rgb(108, 12, 12); font-size: 50px; text-align: center;"><u>Doctor Appointment Booking and Chat System </u></h1>
+  <!-- <marquee direction="right"><iframe src="details.html" width="400px" height="250px"></iframe></marquee> -->
+  <br><br>
+    <div align="center" style="margin-left:350px;font-size:30px " class="boxpay">
+      Consultation fee: Rs.
+      <br> 
+      <b>Pay using debit/credit card:</b> <br><br>
+      <form name="billing" action="billing.php" method="POST">
+      <div style="font-size:25px">
+        Select your card:
+      </div>
+      <select name="card">
+        <option value="Visa">Visa</option>
+          <option value="Master Card">Master Card </option>
+            <option value="American Express">American Express </option>
+      </select>
+      <br><br>
+      
+      Enter the payment details: <br> <br>
+      <table>
+        <tr>
+          <td>
+            Card holder's name
+          </td>
+          <td>
+            Card number
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" placeholder="Name" name="cardname" style="width:60%">
+          </td>
+          <td>
+            <input type="tel" placeholder="Card number" name="cardno" style="width:60%" pattern="[0-9]{4} [0-9]{4} [0-9]{4}">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Expiry Date
+          </td>
+          <td>
+            CVV
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="month" placeholder="date" name="exp" id="exp">
+          </td>
+          <script>
+            document.getElementById('exp').min = "2022-11";
+          </script>
+          <td>
+            <input type="password" placeholder="CVV" name="cvv">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Pay now" name="submit" id="pay">
+          </td>
+        </tr>
+      </table>
+    </form>
+    </div>
+</body>
+</html>

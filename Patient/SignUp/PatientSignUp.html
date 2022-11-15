@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="../../styles/user-2.css">
+    <style>
+        input[type="submit"]{
+            width: 150px;
+            color:rgb(5, 5, 62);
+            background-color:rgb(244, 174, 209);
+            height:50px;
+        }
+        input{
+            height:30px;
+            width:200px;
+            margin:15px;
+            border-width: 5px;
+            font-size: 80%;
+        }
+        input:focus{
+            background-color: rgb(120, 187, 202);
+        }
+        .classbut:hover{
+            background-color: palegreen;
+        }
+        .classbut{
+            font-size: 80%;
+        }
+        body{
+            /* background-image:url("https://media.istockphoto.com/photos/healthcare-and-medical-concept-medicine-doctor-with-stethoscope-in-picture-id1023224308?b=1&k=20&m=1023224308&s=170667a&w=0&h=CMVEBePO1iuSgghYX6dYKfII-UtjenfT2IUyblI0L_k=");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:cover; */
+            background-color: black;
+        }
+    </style>
+    <script>
+        /*function displayform() {
+            var name = document.forms["form2"]["uname"].value;
+            var mail = document.forms["form2"]["mail"].value;
+            var ph = document.forms["form2"]["phno"].value;
+            var age = document.forms["form2"]["age"].value;
+            if ((name == null) || (name == "") || (mail == null) || (mail == "") || (ph == null) || (ph == "") || (age == "") || (age== null)) {
+                alert("Please enter your details");
+            var status=1;
+            }
+            else
+            {
+                var status=0;
+            }
+            /*else {
+                /*document.write("The entered details are: <br><br>");
+                document.write("Name: "+name+"<br>");
+                document.write("Email id: "+mail+"<br>");
+                document.write("Contact no.: "+ph+"<br>");
+                document.write("Age: "+age+"<br>");
+                alert("Congrats! You have been successfully signed in!!");
+            }*/
+        //}
+    </script>
+</head>
+<body>
+    <!-- <script>
+        alert("Please enter the following details to sign in");
+    </script> -->
+    <h1 style="color: antiquewhite; text-align: center;">Patient Sign Up</h1>
+    <div class="box">
+        <form align="center" name="form2" action="sign.php" method="POST">
+            <table align="center">
+                <tr>
+                    <td>
+                        Username
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Username" name="uname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                       <input type="email" placeholder="Email" name="mail">
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        Age
+                    </td>
+                <td>
+                    <input type="number" placeholder="Age" name="age" min="18">
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contact number
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Contact number" name="phno">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        <input type="password" placeholder="Password" name="passw">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" align="center">
+                       <input type = "submit" value="Sign Up" class="classbut" name="submit"> 
+                    </td>
+                </tr>
+               
+            </table>
+            
+        </form>
+    </div>
+</body>
+</html>

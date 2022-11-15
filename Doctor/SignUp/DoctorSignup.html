@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>SIGN UP</title>
+        <link rel="stylesheet" href="../../styles/user-2.css">
+        <style>
+            input[type="submit"] {
+                width: 150px;
+                color: rgb(5, 5, 62);
+                background-color: rgb(244, 174, 209);
+                height: 50px;
+            }
+
+            input,#spl {
+                height: 30px;
+                width: 200px;
+                margin: 15px;
+                border-width: 5px;
+                font-size: 80%;
+            }
+
+            input:focus {
+                background-color: rgb(120, 187, 202);
+            }
+
+            .classbut:hover {
+                background-color: palegreen;
+            }
+
+            .classbut {
+                font-size: 80%;
+            }
+
+            body {
+                /* background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20190220/ourmid/pngtree-technology-technology-health-doctors-image_10060.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover; */
+                background-color: black;
+            }
+        </style>
+        <script>
+            function displayform() {
+                var name = document.forms["form1"]["uname"].value;
+                var mail = document.forms["form1"]["mail"].value;
+                var ph = document.forms["form1"]["number"].value;
+                var degree = document.forms["form1"]["deg"].value;
+                if ((name == null) || (name == "") || (mail == null) || (mail == "") || (ph == null) || (ph == "") || (degree == "") || (degree == null)) {
+                    alert("Please enter your details");
+                }
+                else {
+                    document.write("The entered details are: <br><br>");
+                    document.write("Name: "+name+"<br>");
+                    document.write("Email id: "+mail+"<br>");
+                    document.write("Contact no.: "+ph+"<br>");
+                    document.write("Highest qualification: "+degree+"<br>");
+                    alert("Congrats! You have been successfully signed in!!")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="color: antiquewhite; text-align: center;">Doctor Sign Up</h1>
+        <!-- <script>
+            alert("Fill in the details in the page to sign up as a doctor");
+        </script> -->
+        <div class="box">
+            <form align="center" name="form1" action="signdoc.php" method="POST">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Username
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Username" name="uname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Name" name="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            <input type="email" placeholder="Email" name="mail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Contact number
+                        </td>
+                        <td>
+                            <input type="text" placeholder="phone number" name="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            <input type="password" placeholder="Password" name="passw">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Qualification
+                        </td>
+                        <td>
+                            <input list="degree" name="deg">
+                            <datalist id="degree">
+                                <option value="MBBS">
+                                <option value="MD">
+                                <option value="MSC">
+                                <option value="Other">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Speciality
+                        </td>
+                        <td>
+                            <select name="spl" id="spl">
+                                <option value=""selected>Select speciality</option>
+                                <option value="General Physician">General Physician</option>
+                                <option value="Gynaecologist">Gynaecologist</option>
+                                <option value="Orthopedic">Orthopedic</option>
+                                <option value="Dermatologist">Dermatologist</option>
+                                <option value="ENT">ENT</option>
+                                <option value="Ophthalmologist">Ophthalmologist</option>
+                                <option value="Pediatrician">Pediatrician</option>
+                                <option value="Urologist">Urologist</option>
+                                <option value="Psychiatrist">Psychiatrist</option>
+                                <option value="Dentist">Dentist</option>
+                                <option value="Physiotherapist">Physiotherapist</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Experience
+                        </td>
+                        <td>
+                            <input type="number" name="exp" placeholder="experience">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Fee
+                        </td>
+                        <td>
+                            <input type="text" name="fee" placeholder="Fee">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            City
+                        </td>
+                        <td>
+                            <input type="text" name="city" placeholder="city">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Languages spoken
+                        </td>
+                        <td>
+                            <input type="text" name="lang" placeholder="languages">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="submit" class="classbut" > Sign Up </button>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+            <p id="id1"></p>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,25 @@
+body{
+    background-color:rgb(202, 202, 246);
+}
+
+html{
+    background-color: black;
+    color: antiquewhite;
+  }
+iframe{
+    border-width: 6px;
+    border-color: rgb(23, 23, 101);
+    border-radius: 10%;
+}
+#pay{
+    width:50%;
+    font-size: 20px;
+}
+.boxpay{
+    border:double 10px rgb(140, 6, 6);
+    width:50%;
+    background-color: rgb(216, 180, 240);
+}
+td::selection{
+    background-color: rgb(238, 121, 103);
+}

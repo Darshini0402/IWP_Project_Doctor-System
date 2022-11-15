@@ -1,0 +1,11 @@
+td{
+    color:whitesmoke;
+    font-size: 140%;
+}
+.box{
+    background-color: rgb(115, 61, 241);
+    width:450px;
+    align-content: center;
+    margin-top:40px;
+    margin-left:400px;
+}
