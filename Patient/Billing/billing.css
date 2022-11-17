@@ -1,7 +1,3 @@
-body{
-    background-color:rgb(202, 202, 246);
-}
-
 html{
     background-color: black;
     color: antiquewhite;
@@ -16,9 +12,8 @@ iframe{
     font-size: 20px;
 }
 .boxpay{
-    border:double 10px rgb(140, 6, 6);
+    border:double 10px whitesmoke;
     width:50%;
-    background-color: rgb(216, 180, 240);
 }
 td::selection{
     background-color: rgb(238, 121, 103);

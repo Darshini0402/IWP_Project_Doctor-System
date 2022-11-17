@@ -60,9 +60,9 @@ include '../../DBConnect.php';
                     <span class="line line3"></span>
                 </div>
                 <ul class="menu-items">
-                    <li><a href="DashBoard.php">Home</a></li>
-                    <li><a href="../Chat/docindex.php">Instant Appoinment</a></li>
-                    <li><a href="Cancel/Cancel.php">Cancel Appointment</a></li>
+                    <li><a href="../DashBoard.php">Home</a></li>
+                    <li><a href="InstantAppointment.php">Instant Appoinment</a></li>
+                    <li><a href="../Cancel/Cancel.php">Cancel Appointment</a></li>
                     <li><a href="../Logout.php">Logout</a></li>
                 </ul>
                 <h5 class="logo" style="font-size: 1.3rem;">Welcome 
@@ -108,7 +108,7 @@ include '../../DBConnect.php';
                                 </i></td>
                                 <td><i> <button type="reset" onclick="instantchat()">Chat Now</button></i></td>
                                 <script>
-                                    function instantchat(){            
+                                    function instantchat(){
                                         location.href = "http://localhost/Doctor-System/Chat/docindex.php";
                                     }
                                 </script>
@@ -117,5 +117,7 @@ include '../../DBConnect.php';
                             }
                         }
                 ?>
+            </tbody>
+        </table>
     </body>
 </html>

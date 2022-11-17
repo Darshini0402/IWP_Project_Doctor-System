@@ -56,7 +56,7 @@
         loginForm();
     }
     else {
-        if(isset($_SESSION['docid']))
+        if(isset($_SESSION['patid']))
             {
                 $msgchatid =  $_SESSION["msgchatid"];
                 $q = "SELECT * FROM instantappointments WHERE MessageID = '$msgchatid' ";
@@ -127,26 +127,26 @@
                         });
                     });
                 </script>
-    </body>
-</html>
             <?php
                 }
                 else{
                     ?>
                     <script>
                         alert("Incorrect credentials... please check again.");
-                    </script>
+                        </script>
                     <?php
                         loginForm();
+                    }
                 }
-            }
-            else{
-                ?>
+                else{
+                    ?>
                 <script>
                     alert("Patient has not logged in yet... please wait.");
-                </script>
+                    </script>
                 <?php
                     loginForm();
+                }
             }
-        }
-?>
+            ?>
+    </body>
+</html>

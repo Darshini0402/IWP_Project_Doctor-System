@@ -4,9 +4,6 @@
     session_start();
 
     $id = $_GET['id'];
-
-    $_SESSION["docid"] = $_COOKIE["docid"];
-
     
     include '../../DBConnect.php';
     
@@ -17,10 +14,11 @@
     $doc_id = $row['Doc_ID'];
 
     $qur = "SELECT * FROM doctor WHERE ID = '$doc_id'";
-    $result_doc = mysqli_query($conn,$query);
+    $result_doc = mysqli_query($conn,$qur);
     $row_doc = mysqli_fetch_assoc($result_doc);
 
-    $_SESSION["docname"] = $row_doc['Name'];
+    $_SESSION["doc_name"] = $row_doc['Name'];
+    $_SESSION["doc_id"] = $row_doc['ID'];
 
     if(isset($_POST['datesubmit'])) {
 
@@ -30,7 +28,7 @@
         $phone = $_REQUEST["inputphone"];
         
         $symp = $_REQUEST["inputSymptoms"];
-        $doc_id = $_SESSION["docid"];
+        $doc_id = $_SESSION["doc_id"];
         $pat_id = $_SESSION["patid"];
 
         $date = $_REQUEST["inputDate"];
@@ -102,7 +100,7 @@
 ?>
 <!DOCTYPE html>
     <head>
-        <title>Appointment Booking</title>
+        <title>Edit Appointment</title>
         <style>
             h1{
                 color: antiquewhite;
@@ -156,9 +154,9 @@
                     <span class="line line3"></span>
                 </div>
                 <ul class="menu-items">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../DashBoard.php">Home</a></li>
                     <li><a href="../Booking/Book.php">Book an Appointment</a></li>
-                    <li><a href="../Edit/Edit.php">Edit Appointment</a></li>
+                    <li><a href="Edit.php">Edit Appointment</a></li>
                     <li><a href="../Cancel/Cancel.php">Cancel Appointment</a></li>
                     <li><a href="../Logout.php">Logout</a></li>
                 </ul>
@@ -168,7 +166,7 @@
         </nav>
         <br><br><br><br><br>
 
-        <h3 id="doc-name">Doctor Name: Dr. <?php echo $_SESSION["docname"]; ?></h3>
+        <h3 id="doc-name">Doctor Name: Dr. <?php echo $_SESSION["doc_name"]; ?></h3>
         <br><br>
         <div style="width: 100%; height: 100%;">
             <form name="patient_form" action="" method="post">

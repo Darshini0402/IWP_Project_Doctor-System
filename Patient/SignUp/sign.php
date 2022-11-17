@@ -25,7 +25,7 @@ else
 {
     $res = mysqli_query($conn, $sql);
     if($res)
-        header('Location: /Doctor-System/UserLogin.html');
+        header('Location: /Doctor-System/UserLogin.php');
 }
 mysqli_close($conn);
 ?>

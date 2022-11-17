@@ -54,7 +54,8 @@
                     <span class="line line3"></span>
                 </div>
                 <ul class="menu-items">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../DashBoard.php">Home</a></li>
+                    <li><a href="../Appointment/InstantAppointment.php">Instant Appoinment</a></li>
                     <li><a href="Cancel.php">Cancel Appointment</a></li>
                     <li><a href="../Logout.php">Logout</a></li>
                 </ul>
@@ -96,7 +97,7 @@
                         <td>
                             <form method="post">
                                 <input type="hidden" value= <?php echo $row["ID"]?> name="cancel_id">
-                                <input type="submit" style="color: black;" name="cancel" value="cancel">
+                                <input style="background-color: aquamarine; color: black; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer;" type="submit" style="color: black;" name="cancel" value="Cancel">
                             </form>
                         </td>
                         </tr>

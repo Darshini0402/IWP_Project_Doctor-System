@@ -26,7 +26,7 @@
 
   button {
     background-color: aquamarine;
-    color: white;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -35,5 +35,5 @@
 
   button:hover {
     opacity: 0.8;
-    color: aqua;
+    color: indigo;
   }

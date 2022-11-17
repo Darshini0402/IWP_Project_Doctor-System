@@ -77,7 +77,7 @@ session_start();
                     <span class="line line3"></span>
                 </div>
                 <ul class="menu-items">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../DashBoard.php">Home</a></li>
                     <li><a href="Booking/Book.php">Book an Appointment</a></li>
                     <li><a href="../Edit/Edit.php">Edit Appointment</a></li>
                     <li><a href="../Cancel/Cancel.php">Cancel Appointment</a></li>
@@ -107,7 +107,7 @@ session_start();
                     <option value="Physiotherapist">Physiotherapist</option>
                 </select>
             </div>
-            <input type="submit" placeholder="Login" class="btn" name="submit">
+            <input style="background-color: aquamarine; color: black; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer;" type="submit" placeholder="Login" class="btn" name="submit">
         </form>
         <?php
             include '../../DBConnect.php';
@@ -221,7 +221,7 @@ session_start();
                                                     console.log(doc_id);
                                                     //Creating a cookie after the document is ready
                                                     $(document).ready(function () {
-                                                        createCookie("docid", doc_id);
+                                                        createCookie("doc_later_id", doc_id);
                                                     });
                                                     
                                                     location.href = "http://localhost/Doctor-System/Patient/Appointment/Appointment.php";

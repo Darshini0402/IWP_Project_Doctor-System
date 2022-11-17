@@ -20,10 +20,29 @@ if (($username=="") || ($username==NULL) || ($name=="") || ($name==NULL) || ($m=
 else
     $status=0;
 
+$sql = "SELECT * FROM doctor WHERE Username = '$username'";
+$result = mysqli_query($conn, $sql);
+if(mysqli_num_rows($result) > 0)
+{
+    echo "fail";
+    ?>
+    <script>
+        alert("Username already exists!!! Try again...");
+    </script>
+    <?php
+    header('Location: /Doctor-System/Doctor/SignUp/DoctorSignup.html');
+}
+
 $sql="INSERT INTO doctor (Username, Name, Email, ContactNo, Password, Degree, Speciality, Experience, Language, Fee, City) VALUES ('$username', '$name', '$m','$ph','$password','$degree','$selected','$exp','$lang','$fee','$city')";
 
 if ($status==1)
 {
+    echo "enter";
+    ?>
+    <script>
+        alert("Please fill in all the details");
+    </script>
+    <?php
     header('Location: /Doctor-System/Doctor/SignUp/DoctorSignup.html');
 }
 else

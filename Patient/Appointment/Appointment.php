@@ -3,11 +3,11 @@
     //     header('Location: /Doctor-System/Index.html');
     session_start();
 
-    $_SESSION["docid"] = $_COOKIE["docid"];
+    $_SESSION["doc_later_id"] = $_COOKIE["doc_later_id"];
 
     include '../../DBConnect.php';
 
-    $query = "SELECT * FROM doctor WHERE ID = '" . $_SESSION["docid"]. "'";
+    $query = "SELECT * FROM doctor WHERE ID = '" . $_SESSION["doc_later_id"]. "'";
     $result = mysqli_query($conn,$query);
     $row = mysqli_fetch_assoc($result);
 
@@ -22,7 +22,7 @@
         // $date = $_REQUEST["inputDate"];
         // $time = $_REQUEST["inputTime"];
         $symp = $_REQUEST["inputSymptoms"];
-        $doc_id = $_SESSION["docid"];
+        $doc_id = $_SESSION["doc_later_id"];
         $pat_id = $_SESSION["patid"];
 
         $date = $_REQUEST["inputDate"];

@@ -70,6 +70,7 @@ include '../DBConnect.php';
             </div>
         </nav>
         <br><br><br><br><br>
+
         <table id="patient">
             <thead>
                 <tr>
@@ -105,5 +106,7 @@ include '../DBConnect.php';
                             }
                         }
                 ?>
+            </tbody>
+        </table>
     </body>
 </html>

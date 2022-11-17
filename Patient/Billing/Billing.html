@@ -22,8 +22,7 @@
         font-size:20px;
       }
       input:focus{
-        background-color: rgb(245, 166, 234);
-        color:rgb(83, 17, 79);
+        color: black;
         font-size:15px;
       }
       input[type="submit"]:hover{
@@ -32,9 +31,9 @@
     </style>
 </head>
 <body>
-  <h1 style="font-weight: bold; font-family: 'Times New Roman', Times, serif; color:rgb(108, 12, 12); font-size: 50px; text-align: center;"><u>Doctor Appointment Booking and Chat System </u></h1>
+  <h1 style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 50px; text-align: center;">Doctor Appointment Booking and Chat System </h1>
   <!-- <marquee direction="right"><iframe src="details.html" width="400px" height="250px"></iframe></marquee> -->
-  <br><br>
+  <br>
     <div align="center" style="margin-left:350px;font-size:30px " class="boxpay">
       Consultation fee: Rs.
       <br> 
@@ -43,7 +42,7 @@
       <div style="font-size:25px">
         Select your card:
       </div>
-      <select name="card">
+      <select name="card" required>
         <option value="Visa">Visa</option>
           <option value="Master Card">Master Card </option>
             <option value="American Express">American Express </option>
@@ -62,10 +61,10 @@
         </tr>
         <tr>
           <td>
-            <input type="text" placeholder="Name" name="cardname" style="width:60%">
+            <input type="text" placeholder="Name" name="cardname" style="width:60%" required>
           </td>
           <td>
-            <input type="tel" placeholder="Card number" name="cardno" style="width:60%" pattern="[0-9]{4} [0-9]{4} [0-9]{4}">
+            <input type="tel" placeholder="Card number" name="cardno" style="width:60%" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" required>
           </td>
         </tr>
         <tr>
@@ -78,18 +77,18 @@
         </tr>
         <tr>
           <td>
-            <input type="month" placeholder="date" name="exp" id="exp">
+            <input type="month" placeholder="date" name="exp" id="exp" required>
           </td>
           <script>
-            document.getElementById('exp').min = "2022-11";
+            document.getElementById('exp').min = "2022-18";
           </script>
           <td>
-            <input type="password" placeholder="CVV" name="cvv">
+            <input type="password" placeholder="CVV" name="cvv" required>
           </td>
         </tr>
         <tr>
           <td colspan="2" align="center">
-            <input type="submit" value="Pay now" name="submit" id="pay">
+            <input type="submit" value="Pay now" name="submit" id="pay" required>
           </td>
         </tr>
       </table>

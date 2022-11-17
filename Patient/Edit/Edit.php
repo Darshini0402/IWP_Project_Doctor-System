@@ -52,10 +52,10 @@ include '../../DBConnect.php';
                     <span class="line line3"></span>
                 </div>
                 <ul class="menu-items">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../DashBoard.php">Home</a></li>
                     <li><a href="../Booking/Book.php">Book an Appointment</a></li>
-                    <li><a href="../Edit/Edit.php">Edit Appointment</a></li>
-                    <li><a href="Cancel.php">Cancel Appointment</a></li>
+                    <li><a href="Edit.php">Edit Appointment</a></li>
+                    <li><a href="../Cancel/Cancel.php">Cancel Appointment</a></li>
                     <li><a href="../Logout.php">Logout</a></li>
                 </ul>
                 <h5 class="logo" style="font-size: 1.3rem;">Welcome 
@@ -79,11 +79,10 @@ include '../../DBConnect.php';
             // }
             ?>
             <div>
-                <div>
-                   
-                        <?php
-                        echo "
-                        <table id='patient'>
+              <div>
+                <?php
+                    echo "
+                      <table id='patient'>
                         <thead>
                           <tr>
                             <th scope='col'>S.NO.</th>
@@ -95,62 +94,41 @@ include '../../DBConnect.php';
                             <th scope='col'>Edit appointment</th>
                           </tr>
                         </thead>
-                        <tbody>";
-      if( mysqli_num_rows( $res1 )==0 ){
-        echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-      }else{
-        $i = 0;
-        while( $row = mysqli_fetch_array( $res1 ) ){
-            $id_doc=$row['Doc_ID'];
-        $sql2="SELECT Name from doctor where ID='$id_doc'";
-        $res2=mysqli_query($conn,$sql2);
-       
-          echo "<tr>
-          <th scope='row'>" . (++$i) . "</th>
-          <td><i>" .$row['Name']. "</i></td>
-          <td><i>". $row['Phone'] . "</i></td>
-          <td><i>". $row['App_Date']." </i></td>
-          <td><i>". $row['App_Time']."</i></td>
-          ";
-           while($r=mysqli_fetch_array($res2))
-          {
-            echo "<td><i>". $r['Name']."</i></td>";
-          } 
-          $output = '<td><a href="EditAppointment.php?id=' . $row['ID'] .' ">Edit</a> </td> </tr>'; 
-          echo $output;
-        }
-      }
-    ?>
+                      <tbody>";
 
-                              <!-- <tr>
-                                <th scope="row">1</th>
-                                <td><i> Patient Name </i></td>
-                                <td><i> Patient phone </i></td>
-                                <td><i> Date </i></td>
-                                <td><i> Time </i></td>
-                                <td><i> fname </i> <i> lname </i></td>
-                                <td><button type="button" style="color: black;">Edit</button></td>
-                              </tr>
+                    if (mysqli_num_rows( $res1 )==0 )
+                    {
+                        echo '<tr><td colspan="4">No Rows Returned</td></tr>';
+                    }
+                    else
+                    {
+                        $i = 0;
+                        while( $row = mysqli_fetch_array( $res1 ) )
+                        {
+                          $id_doc=$row['Doc_ID'];
+                          $sql2="SELECT Name from doctor where ID='$id_doc'";
+                          $res2=mysqli_query($conn,$sql2);
+                        
+                            echo "
                               <tr>
-                                <th scope="row">2</th>
-                                <td><i> Patient Name </i></td>
-                                <td><i> Patient phone </i></td>
-                                <td><i> Date </i></td>
-                                <td><i> Time </i></td>
-                                <td><i> fname </i> <i> lname </i></td>
-                                <td><button type="button" style="color: black;">Edit</button></td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td><i> Patient Name </i></td>
-                                <td><i> Patient phone </i></td>
-                                <td><i> Date </i></td>
-                                <td><i> Time </i></td>
-                                <td><i> fname </i> <i> lname </i></td>
-                                <td><button type="button" style="color: black;">Edit</button></td>
-                              </tr> -->
-                        </tbody>
-                    </table>
+                                <th scope='row'>" . (++$i) . "</th>
+                                <td><i>" .$row['Name']. "</i></td>
+                                <td><i>". $row['Phone'] . "</i></td>
+                                <td><i>". $row['App_Date']." </i></td>
+                                <td><i>". $row['App_Time']."</i></td>";
+
+                                while($r=mysqli_fetch_array($res2))
+                                {
+                                  echo "<td><i>". $r['Name']."</i></td>";
+                                } 
+                                $output = '<td><a href="EditAppointment.php?id=' . $row['ID'] .' ">Edit</a> </td> 
+                              </tr>'; 
+                              echo $output;
+                        }
+                    }
+                ?>      
+                    </tbody>
+                  </table>
                 </div>
             </div>
         </div>
